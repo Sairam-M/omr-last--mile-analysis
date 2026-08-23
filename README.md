@@ -233,10 +233,10 @@ The main source datasets included in the repository are:
 | Dataset | Local copy | Original source |
 |---|---|---|
 | OSM building footprints | [`buildings.geojson`](data/buildings.geojson) | OpenStreetMap |
-| GCC 2022 ward boundaries | [`chennai_gcc_wards_2022.kml`](data/chennai_gcc_wards_2022.kml) | `[Add original source URL]` |
-| 2011 ward population | [`gcc_2011_pop_data_170_200_Scraped.xlsx`](data/gcc_2011_pop_data_170_200_Scraped.xlsx) | `[Add original source URL]` |
-| Slum locations | [`slums.kml`](data/slums.kml) | `[Add original source URL]` |
-| MTC GTFS stops | [`stops.txt`](data/mtc-gtfs/stops.txt) | `[Add original source URL]` |
+| GCC 2022 ward boundaries | [`chennai_gcc_wards_2022.kml`](data/chennai_gcc_wards_2022.kml) | [`OpenCity`](https://data.opencity.in/dataset/gcc-ward-information) |
+| 2011 ward population | [`gcc_2011_pop_data_170_200_Scraped.xlsx`](data/gcc_2011_pop_data_170_200_Scraped.xlsx) | [`Chennai Corporation`](https://chennaicorporation.gov.in/delimitation_draft/pdf/DELIMITATION_OF_WARDS_DRAFT_PROPOSAL_ENGLISH.pdf) |
+| Slum locations | [`slums.kml`](data/slums.kml) | [`OpenCity`](https://data.opencity.in/dataset/chennai-slums) |
+| MTC GTFS stops | [`stops.txt`](data/mtc-gtfs/stops.txt) | [`ChennaiGTFS`](https://github.com/ungalsoththu/ChennaiGTFS/tree/main) |
 | South-of-Navalur OSM inputs | [`south_of_navalur/`](data/south_of_navalur/) | OpenStreetMap / manually prepared inputs |
 
 Additional source/methodology details are available in the report under:
