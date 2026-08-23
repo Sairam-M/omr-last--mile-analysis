@@ -2,7 +2,7 @@
 
 An exploratory analysis of last-mile connectivity along the Old Mahabalipuram Road (OMR) corridor in Chennai.
 
-The repository contains the code, source data and outputs from an extension of the existing analysis, with a focus on:
+This repository contains the code, source data and outputs from an extension of the existing Data Jam analysis. It brings together additional datasets and spatial accessibility analysis for further review and use in the project.
 
 - Bus accessibility using official MTC GTFS stops
 - Metro accessibility using walking catchments around planned/current metro stations
@@ -54,14 +54,11 @@ OMR_LAST_MILE_ANALYSIS/
     └── south_of_navalur/
         └── omr_south_of_navalur.py
 ```
-
 ## Setup
 
 Python 3.10+ is recommended.
 
-Create a virtual environment and install the dependencies:
-
-### Windows
+From the repository root:
 
 ```bat
 python -m venv .venv
@@ -69,15 +66,37 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-### Run the main OMR analysis
+### First-time data setup
 
+The current script expects its input files in the repository root. To preserve the cleaner repository structure, copy the required inputs from `data/` to the root before running:
+
+```bat
+copy data\buildings.geojson .
+copy data\chennai_gcc_wards_2022.kml .
+copy data\gcc_2011_pop_data_170_200_Scraped.xlsx .
+copy data\slums.kml .
+copy data\mtc-gtfs\stops.txt .
+```
+
+### Prepare data for the South-of-Navalur analysis
+
+The South-of-Navalur script also expects its manually prepared OSM inputs in the repository root. Copy them before running:
+
+```bat
+copy data\south_of_navalur\south_drive_network.geojson .
+copy data\south_of_navalur\south_walk_network.geojson .
+copy data\south_of_navalur\south_schools.geojson .
+copy data\south_of_navalur\south_hospitals.geojson .
+```
+
+## Running the analysis
+
+Run these commands from the repository root.
+
+### Main OMR analysis
 ```bat
 python src\omr_master_cached.py
 ```
-
-The main script uses the source files under `data/` and writes results to `outputs/`.
-
-The script also uses a local cache for expensive downloads and computations. The cache is not included in the repository and can be regenerated when required.
 
 ### Run the South-of-Navalur analysis
 
@@ -211,23 +230,20 @@ outputs/ward_population_accessibility_3B.csv
 
 The main source datasets included in the repository are:
 
-| Dataset | File |
-|---|---|
-| OSM building footprints | `data/buildings.geojson` |
-| GCC 2022 ward boundaries | `data/chennai_gcc_wards_2022.kml` |
-| 2011 ward population | `data/gcc_2011_pop_data_170_200_Scraped.xlsx` |
-| Slum locations | `data/slums.kml` |
-| MTC GTFS stops | `data/mtc-gtfs/stops.txt` |
-| South-of-Navalur OSM inputs | `data/south_of_navalur/` |
+| Dataset | Local copy | Original source |
+|---|---|---|
+| OSM building footprints | [`buildings.geojson`](data/buildings.geojson) | OpenStreetMap |
+| GCC 2022 ward boundaries | [`chennai_gcc_wards_2022.kml`](data/chennai_gcc_wards_2022.kml) | `[Add original source URL]` |
+| 2011 ward population | [`gcc_2011_pop_data_170_200_Scraped.xlsx`](data/gcc_2011_pop_data_170_200_Scraped.xlsx) | `[Add original source URL]` |
+| Slum locations | [`slums.kml`](data/slums.kml) | `[Add original source URL]` |
+| MTC GTFS stops | [`stops.txt`](data/mtc-gtfs/stops.txt) | `[Add original source URL]` |
+| South-of-Navalur OSM inputs | [`south_of_navalur/`](data/south_of_navalur/) | OpenStreetMap / manually prepared inputs |
 
 Additional source/methodology details are available in the report under:
 
 ```text
 docs/OMR Last-Mile Connectivity Assessment.md
 ```
-
-### Chunk 7 — Status / handoff
-
 
 ## Status
 
