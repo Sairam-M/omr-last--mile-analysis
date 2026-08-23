@@ -1,0 +1,290 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-08-23T13:56:06Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2125931950",
+        "addr:block": "Tiruporur",
+        "addr:district": "Kancheepuram",
+        "addr:full": "Kelambakkam, Rajiv Gandhi Salai",
+        "addr:postcode": "603103",
+        "addr:state": "Tamil Nadu",
+        "addr:subdistrict": "Chengalpattu",
+        "amenity": "hospital",
+        "name": "Chettinadu Hospital & Research Institute",
+        "source": "OpenGovernmentData"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2155228,
+          12.7960843
+        ]
+      },
+      "id": "node/2125931950"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5321368440",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Marhura hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2275731,
+          12.8369284
+        ]
+      },
+      "id": "node/5321368440"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6930405963",
+        "addr:district": "Kanchipuram",
+        "addr:full": "Chettinad Health City, It Highway Omr Road,Rajiv Gandhi Salai, Kelambakam",
+        "addr:postcode": "603103",
+        "addr:state": "Tamil Nadu",
+        "amenity": "hospital",
+        "name": "Chettinad Hospital",
+        "source": "OpenGovernmentData"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2175961,
+          12.7971558
+        ]
+      },
+      "id": "node/6930405963"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7257289090",
+        "addr:district": "Kancheepuram",
+        "addr:full": "Near Navalur, Thalambur, Chennai, Omr, Rajiv Gandhi Salai",
+        "addr:postcode": "600130",
+        "addr:state": "Tamil Nadu",
+        "addr:subdistrict": "Sholinganallur",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Shri Isari Velan Hospital",
+        "source": "OpenGovernmentData"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1972613,
+          12.846693
+        ]
+      },
+      "id": "node/7257289090"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7820874234",
+        "addr:district": "Chengalpattu",
+        "addr:full": "Mambakkam, Sriperumbudur",
+        "addr:postcode": "600127",
+        "addr:state": "Tamil Nadu",
+        "amenity": "hospital",
+        "name": "Sugam Hospital",
+        "source": "Local Knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.166309,
+          12.82684
+        ]
+      },
+      "id": "node/7820874234"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7820874276",
+        "addr:district": "Chengalpattu",
+        "addr:full": "Siruseri",
+        "addr:postcode": "603103",
+        "addr:state": "Tamil Nadu",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Punarjeevan Hospital",
+        "source": "Local Knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2221711,
+          12.817871
+        ]
+      },
+      "id": "node/7820874276"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7820874279",
+        "addr:district": "Chengalpattu",
+        "addr:full": "Mambakkam",
+        "addr:postcode": "603103",
+        "addr:state": "Tamil Nadu",
+        "amenity": "clinic",
+        "name": "Sri Sai Clinic",
+        "source": "Local Knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.166036,
+          12.827101
+        ]
+      },
+      "id": "node/7820874279"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7820874282",
+        "addr:district": "Chengalpattu",
+        "addr:full": "Padur",
+        "addr:postcode": "603103",
+        "addr:state": "Tamil Nadu",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Thulasi Clinic Centre",
+        "source": "Local Knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.224703,
+          12.8054378
+        ]
+      },
+      "id": "node/7820874282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7820874283",
+        "addr:district": "Chengalpattu",
+        "addr:full": "Padur",
+        "addr:postcode": "603103",
+        "addr:state": "Tamil Nadu",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Padur Clinic",
+        "source": "Local Knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2247264,
+          12.8054706
+        ]
+      },
+      "id": "node/7820874283"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7820874284",
+        "addr:district": "Chengalpattu",
+        "addr:full": "Padur",
+        "addr:postcode": "603103",
+        "addr:state": "Tamil Nadu",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Supreme Speciality Hospitals",
+        "source": "Local Knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2244216,
+          12.8063158
+        ]
+      },
+      "id": "node/7820874284"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7820874293",
+        "addr:district": "Chengalpattu",
+        "addr:full": "Kelambakkam",
+        "addr:postcode": "603103",
+        "addr:state": "Tamil Nadu",
+        "amenity": "clinic",
+        "name": "AKM ENT Clinic",
+        "source": "Local Knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2244334,
+          12.8065833
+        ]
+      },
+      "id": "node/7820874293"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9591995528",
+        "addr:city": "Chennai",
+        "addr:housenumber": "1/79",
+        "addr:postcode": "600130",
+        "addr:street": "Rajiv Gandhi Salai",
+        "addr:suburb": "Navalur",
+        "amenity": "hospital",
+        "description": "24 hours service",
+        "healthcare": "hospital",
+        "name": "S B Hospital",
+        "opening_hours": "Mo-Su 12:00-00:00",
+        "phone": "+919514577333",
+        "website": "https://s-b-hospital.business.site/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2263842,
+          12.8461109
+        ]
+      },
+      "id": "node/9591995528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9952825959",
+        "addr:city": "Kazhipattur",
+        "addr:postcode": "603103",
+        "addr:street": "Annai Theresa Street",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "acupuncture;traditional_chinese_medicine;headac;chiropractic;alternative;pain_control;rheumatology",
+        "name": "Chennai Best Acupuncture Clinic in OMR Padur"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2257817,
+          12.8124897
+        ]
+      },
+      "id": "node/9952825959"
+    }
+  ]
+}

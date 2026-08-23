@@ -1,0 +1,3 @@
+label,total,bus_only,metro_only,both,neither,neither_pct
+Schools (south of Navalur),10,0,0,1,9,90.0
+Hospitals (south of Navalur),10,3,0,1,6,60.0

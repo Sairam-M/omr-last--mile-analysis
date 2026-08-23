@@ -1,0 +1,4 @@
+label,total,bus_only,metro_only,both,neither
+"Schools (Purple+Red Line, ward-scoped)",96,14,4,0,78
+"Hospitals (Purple+Red Line, ward-scoped)",104,43,5,8,48
+"Slums (Purple+Red Line, ward-scoped)",88,21,1,5,61
