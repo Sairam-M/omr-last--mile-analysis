@@ -40,7 +40,6 @@ survives into this script.
 """
 
 import os
-os.chdir("C:/Users/Sairam/Downloads")
 
 import geopandas as gpd
 import pandas as pd
