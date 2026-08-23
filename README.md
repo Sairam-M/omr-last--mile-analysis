@@ -53,6 +53,7 @@ OMR_LAST_MILE_ANALYSIS/
     │
     └── south_of_navalur/
         └── omr_south_of_navalur.py
+```
 
 ## Setup
 
@@ -194,7 +195,7 @@ The results are in:
 
 ```text
 outputs/ward_population_accessibility_3B.csv
-
+```
 ## Important caveats
 
 - **Population:** The population accessibility layer is an estimate based on 2011 Census ward totals and residential building footprints. It is not a current official population estimate.
@@ -223,11 +224,11 @@ Additional source/methodology details are available in the report under:
 
 ```text
 docs/OMR Last-Mile Connectivity Assessment.md
-
+```
 
 ### Chunk 7 — Status / handoff
 
-```markdown
+
 ## Status
 
 This repository is intended as a handoff of the additional data discovery, analysis and outputs explored during the project.
