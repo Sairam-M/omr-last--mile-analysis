@@ -5,3 +5,4 @@ networkx
 shapely
 folium
 openpyxl
+scipy

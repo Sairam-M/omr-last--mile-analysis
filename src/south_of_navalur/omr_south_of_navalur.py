@@ -11,8 +11,10 @@ MAIN_SCRIPT_SOUTH_BOUND = 12.852093
 SOUTH_BBOX = (80.15, 12.75, 80.28, MAIN_SCRIPT_SOUTH_BOUND)  
 WALK_DIST_M = 500
 
-MTC_STOPS_PATH = "mtc-gtfs/stops.txt"
+MTC_STOPS_PATH = "mtc-gtfs-stops.txt"
 SLUM_KML_PATH = "slums.kml"
+OUTPUT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../outputs/south_of_navalur"))
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Enforce fully offline settings
 ox.settings.use_dns = False
@@ -226,7 +228,7 @@ print("skipped, see methodology note at the end of this script for explanation")
 
 # # Save the actual southern slum features
 # slums_south_4326.to_file(
-#     "output_slums_south.geojson",
+#     os.path.join(OUTPUT_DIR, "output_slums_south.geojson"),
 #     driver="GeoJSON"
 # )
 
@@ -254,21 +256,21 @@ def summarize(df, label):
 
 results = [summarize(schools_south, "Schools (south of Navalur)"),
            summarize(hospitals_south, "Hospitals (south of Navalur)")]
-pd.DataFrame(results).to_csv("south_of_navalur_summary.csv", index=False)
-print("\nSaved: south_of_navalur_summary.csv")
+pd.DataFrame(results).to_csv(os.path.join(OUTPUT_DIR, "south_of_navalur_summary.csv"), index=False)
+print(f"\nSaved: {os.path.join(OUTPUT_DIR, 'south_of_navalur_summary.csv')}")
 
 
 # ============================================================================
 # STEP S7 — Save outputs
 # ============================================================================
 schools_south.drop(columns=["centroid"], errors="ignore").to_crs(4326).to_file(
-    "output_schools_south.geojson", driver="GeoJSON")
+    os.path.join(OUTPUT_DIR, "output_schools_south.geojson"), driver="GeoJSON")
 hospitals_south.drop(columns=["centroid"], errors="ignore").to_crs(4326).to_file(
-    "output_hospitals_south.geojson", driver="GeoJSON")
+    os.path.join(OUTPUT_DIR, "output_hospitals_south.geojson"), driver="GeoJSON")
 gpd.GeoDataFrame(geometry=[isochrone_south], crs=CRS_METRIC).to_crs(4326).to_file(
-    "output_isochrone_south.geojson", driver="GeoJSON")
+    os.path.join(OUTPUT_DIR, "output_isochrone_south.geojson"), driver="GeoJSON")
 
-print("\nSaved: output_schools_south.geojson, output_hospitals_south.geojson, output_isochrone_south.geojson")
+print(f"\nSaved south-of-Navalur outputs to: {OUTPUT_DIR}")
 
 
 # ============================================================================
@@ -334,8 +336,8 @@ for _, row in hospitals_south.to_crs(4326).iterrows():
 fg.add_to(m)
 
 folium.LayerControl(collapsed=False).add_to(m)
-m.save("omr_south_of_navalur_map.html")
-print("Saved: omr_south_of_navalur_map.html")
+m.save(os.path.join(OUTPUT_DIR, "omr_south_of_navalur_map.html"))
+print(f"Saved: {os.path.join(OUTPUT_DIR, 'omr_south_of_navalur_map.html')}")
 print("[NOTE] No slum layer, no ward outlines, no population — this extent has "
       "none of those data sources, consistent with the methodology note below.")
 

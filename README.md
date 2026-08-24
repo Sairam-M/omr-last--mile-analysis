@@ -87,6 +87,7 @@ copy data\south_of_navalur\south_drive_network.geojson .
 copy data\south_of_navalur\south_walk_network.geojson .
 copy data\south_of_navalur\south_schools.geojson .
 copy data\south_of_navalur\south_hospitals.geojson .
+copy .\data\mtc-gtfs\stops.txt mtc-gtfs-stops.txt
 ```
 
 ## Running the analysis
