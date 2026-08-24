@@ -75,7 +75,7 @@ copy data\buildings.geojson .
 copy data\chennai_gcc_wards_2022.kml .
 copy data\gcc_2011_pop_data_170_200_Scraped.xlsx .
 copy data\slums.kml .
-copy data\mtc-gtfs\stops.txt .
+copy data\mtc-gtfs\stops.txt mtc-gtfs-stops.txt
 ```
 
 ### Prepare data for the South-of-Navalur analysis

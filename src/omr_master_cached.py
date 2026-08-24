@@ -61,6 +61,8 @@ CRS_METRIC = 32644                    # UTM 44N — meters, correct for Chennai
 # Delete cache/ when you intentionally want a completely fresh run.
 CACHE_DIR = Path("cache_omr")
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
+OUTPUT_DIR = Path(__file__).resolve().parent.parent / "outputs"
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 CACHE_VERSION = "v1"
 
@@ -297,7 +299,7 @@ print("\n" + "=" * 70)
 print("STEP X: MTC GTFS bus stops — OMR study extent")
 print("=" * 70)
 
-MTC_STOPS_PATH = "mtc-gtfs/stops.txt"
+MTC_STOPS_PATH = "mtc-gtfs-stops.txt"
 
 OMR_MIN_LON, OMR_MIN_LAT, OMR_MAX_LON, OMR_MAX_LAT = BBOX  # derived from BBOX — was previously
                                                               # hardcoded separately, would have
@@ -857,8 +859,8 @@ summary_rows = [
     summarize(hospitals_omr, "bus_covered", "metro_covered_either_line", "Hospitals (Purple+Red Line)"),
     summarize(slums_near_omr, "outside_isochrone", "metro_covered_either_line", "Slums (Purple+Red Line)", invert_bus=True),
 ]
-pd.DataFrame(summary_rows).to_csv("bus_metro_comparison_summary.csv", index=False)
-print("\nSaved: bus_metro_comparison_summary.csv")
+pd.DataFrame(summary_rows).to_csv(OUTPUT_DIR / "bus_metro_comparison_summary.csv", index=False)
+print(f"\nSaved: {OUTPUT_DIR / 'bus_metro_comparison_summary.csv'}")
 
 
 # ============================================================================
@@ -948,7 +950,7 @@ summary_rows_scoped = [
     summarize(hospitals_omr, "bus_covered", "metro_covered_either_line", "Hospitals (Purple+Red Line, ward-scoped)"),
     summarize(slums_near_omr, "outside_isochrone", "metro_covered_either_line", "Slums (Purple+Red Line, ward-scoped)", invert_bus=True),
 ]
-pd.DataFrame(summary_rows_scoped).to_csv("bus_metro_comparison_summary.csv", index=False)
+pd.DataFrame(summary_rows_scoped).to_csv(OUTPUT_DIR / "bus_metro_comparison_summary.csv", index=False)
 print("\n[NOTE] bus_metro_comparison_summary.csv OVERWRITTEN with ward-scoped figures — "
       "this is now the reportable version.")
 
@@ -1000,8 +1002,8 @@ short_names = {
     "slum_area_outside_metro_ha": "slm_out_metro",
 }
 print(final_ward_table.rename(columns=short_names).round(1).to_string(index=False))
-final_ward_table.to_csv("ward_wise_summary.csv", index=False)
-print("\nSaved: ward_wise_summary.csv")
+final_ward_table.to_csv(OUTPUT_DIR / "ward_wise_summary.csv", index=False)
+print(f"\nSaved: {OUTPUT_DIR / 'ward_wise_summary.csv'}")
 
 
 # ============================================================================
@@ -1045,8 +1047,8 @@ priority_short_names = {
 print(priority[[name_col, "schools_neither", "hospitals_neither", "slum_neither_area_ha",
                  "priority_score"]].rename(columns=priority_short_names).round(2).to_string(index=False))
 
-priority.to_csv("priority_wards.csv", index=False)
-print("\nSaved: priority_wards.csv")
+priority.to_csv(OUTPUT_DIR / "priority_wards.csv", index=False)
+print(f"\nSaved: {OUTPUT_DIR / 'priority_wards.csv'}")
 print("[NOTE] priority_score is a normalized ranking aid, not an absolute measure — "
       "use for ordering wards, not for claiming a precise magnitude of need.")
 
@@ -1089,8 +1091,8 @@ def outside_gcc_stats(df, label):
 outside_results = [outside_gcc_stats(schools_outside_gcc, "Schools outside GCC"),
                     outside_gcc_stats(hospitals_outside_gcc, "Hospitals outside GCC")]
 print("Slums outside GCC: 0 (slum layer source only covers GCC's own zone/ward system)")
-pd.DataFrame(outside_results).to_csv("outside_gcc_summary.csv", index=False)
-print("Saved: outside_gcc_summary.csv")
+pd.DataFrame(outside_results).to_csv(OUTPUT_DIR / "outside_gcc_summary.csv", index=False)
+print(f"Saved: {OUTPUT_DIR / 'outside_gcc_summary.csv'}")
 
 
 # ============================================================================
@@ -1165,11 +1167,11 @@ print("\n" + "=" * 70); print("STEP 12: Saving outputs + map"); print("=" * 70)
 for df, name in [(schools_omr, "schools"), (hospitals_omr, "hospitals")]:
     df["true_metro_dist"] = df["true_metro_dist"].replace(float("inf"), 999999)
     df.drop(columns=["centroid"], errors="ignore").to_crs(4326).to_file(
-        f"output_{name}_final.geojson", driver="GeoJSON")
+        OUTPUT_DIR / f"output_{name}_final.geojson", driver="GeoJSON")
 slums_near_omr["true_metro_dist"] = slums_near_omr["true_metro_dist"].replace(float("inf"), 999999)
 slums_near_omr.drop(columns=["centroid"], errors="ignore").to_crs(4326).to_file(
-    "output_slums_final.geojson", driver="GeoJSON")
-wards_near_omr.to_crs(4326).to_file("output_wards_near_omr.geojson", driver="GeoJSON")
+    OUTPUT_DIR / "output_slums_final.geojson", driver="GeoJSON")
+wards_near_omr.to_crs(4326).to_file(OUTPUT_DIR / "output_wards_near_omr.geojson", driver="GeoJSON")
 
 import folium
 from folium.plugins import Fullscreen
@@ -1296,7 +1298,7 @@ for _, row in wards_near_omr.to_crs(4326).iterrows():
 fg.add_to(m)
 
 folium.LayerControl(collapsed=False).add_to(m)
-m.save("omr_full_map.html")
+m.save(OUTPUT_DIR / "omr_full_map.html")
 
 print("Saved: output_schools_final.geojson, output_hospitals_final.geojson,")
 print("       output_slums_final.geojson, output_wards_near_omr.geojson, omr_full_map.html")
@@ -1467,7 +1469,7 @@ print(
 )
 
 residential_area_by_ward.to_csv(
-    "ward_residential_building_area_omr.csv",
+    OUTPUT_DIR / "ward_residential_building_area_omr.csv",
     index=False
 )
 
@@ -1509,13 +1511,13 @@ for ward_no in ["170", "174"]:
 # ============================================================================
 
 POP_PATH = "gcc_2011_pop_data_170_200_Scraped.xlsx"
-RES_AREA_PATH = "ward_residential_building_area_omr.csv"
+# RES_AREA_PATH = "ward_residential_building_area_omr.csv"
 
 # Load population data
 pop = pd.read_excel(POP_PATH)
 
 # Load residential footprint area
-res_area = pd.read_csv(RES_AREA_PATH)
+res_area = residential_area_by_ward.copy() # pd.read_csv(RES_AREA_PATH)
 
 # Keep only the columns needed
 pop = pop[["Ward", "Zone", "Buildings", "Households", "2011 Population"]].copy()
@@ -1586,7 +1588,7 @@ print(
 
 # Save
 ward_population.to_csv(
-    "ward_population_density_omr.csv",
+    OUTPUT_DIR / "ward_population_density_omr.csv",
     index=False
 )
 
@@ -1980,7 +1982,7 @@ print(
 
 # Save human-readable output as well
 step3b.to_csv(
-    "ward_population_accessibility_3B.csv",
+    OUTPUT_DIR / "ward_population_accessibility_3B.csv",
     index=False
 )
 
