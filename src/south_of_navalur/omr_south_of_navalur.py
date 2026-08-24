@@ -333,25 +333,6 @@ for _, row in hospitals_south.to_crs(4326).iterrows():
                          popup=row.get("name", "hospital")).add_to(fg)
 fg.add_to(m)
 
-# Add to the existing map
-fg = folium.FeatureGroup(name="Slums — GCC/TNSCB layer", show=True)
-
-for _, row in slums_south_4326.iterrows():
-    geom = row.geometry
-
-    folium.GeoJson(
-        geom.__geo_interface__,
-        style_function=lambda x: {
-            "color": "red",
-            "weight": 2,
-            "fillColor": "red",
-            "fillOpacity": 0.35
-        },
-        tooltip=str(row.get("name", "Slum"))
-    ).add_to(fg)
-
-fg.add_to(m)
-
 folium.LayerControl(collapsed=False).add_to(m)
 m.save("omr_south_of_navalur_map.html")
 print("Saved: omr_south_of_navalur_map.html")
