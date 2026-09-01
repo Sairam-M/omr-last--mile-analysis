@@ -16,6 +16,9 @@ The work is intended as a **research/analysis contribution for the team to revie
 
 ---
 
+## Report
+~74% of the corridor's ~556K residents (Baseline 2011) lack bus or metro access within 500m - (see full report)[https://github.com/Sairam-M/omr-last--mile-analysis/blob/main/docs/OMR%20Last-Mile%20Connectivity%20Assessment.md]
+
 ## Repository Structure
 
 ```text
@@ -134,7 +137,6 @@ Key CSV outputs:
 
 ```text
 outputs/ward_wise_summary.csv
-outputs/priority_wards.csv
 outputs/bus_metro_comparison_summary.csv
 outputs/ward_population_accessibility_3B.csv
 outputs/ward_population_density_omr.csv

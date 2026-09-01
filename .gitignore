@@ -1,0 +1,77 @@
+# ============================================================
+# Python
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ============================================================
+# IDE / Editor
+# ============================================================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ============================================================
+# OS files
+# ============================================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# Python / tool caches
+# ============================================================
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ============================================================
+# Analysis caches
+# ============================================================
+
+cache_omr/
+cache/ 
+
+# ============================================================
+# Temporary root-level copies used by the scripts
+# ============================================================
+
+/buildings.geojson
+/chennai_gcc_wards_2022.kml
+/gcc_2011_pop_data_170_200_Scraped.xlsx
+/slums.kml
+/stops.txt
+
+/south_drive_network.geojson
+/south_walk_network.geojson
+/south_schools.geojson
+/south_hospitals.geojson
+/mtc-gtfs-stops.txt
+/outputs/priority_wards.csv
+
+# ============================================================
+# Temporary / log files
+# ============================================================
+
+*.log
+*.tmp
