@@ -118,8 +118,6 @@ The OSM network and facility inputs for this section are included under:
 data/south_of_navalur/
 ```
 
-They were retained because the required OSM downloads were not reliable during the analysis.
-
 ## Important outputs
 
 ### Interactive maps
@@ -166,7 +164,6 @@ Spatial outputs:
 ```text
 outputs/south_of_navalur/output_schools_south.geojson
 outputs/south_of_navalur/output_hospitals_south.geojson
-outputs/south_of_navalur/output_slums_south.geojson
 outputs/south_of_navalur/output_isochrone_south.geojson
 ```
 
@@ -178,7 +175,7 @@ The detailed analysis and methodology are documented here:
 docs/OMR Last-Mile Connectivity Assessment.md
 ```
 
-For a quick review, I would start with the **main HTML map**, **`ward_wise_summary.csv`**, **`priority_wards.csv`**, and the **report**.
+For a quick review, I would start with the **main HTML map**, **`ward_wise_summary.csv`**, and the **report**.
 
 ## What was added
 
@@ -228,7 +225,6 @@ outputs/ward_population_accessibility_3B.csv
 - **500 m walking catchment:** Accessibility is based on walking distance through the available network. It does not model actual travel time, waiting time, crossings or transfers.
 - **Metro accessibility:** Metro coverage represents walking access to stations, not end-to-end metro travel time.
 - **Ward scope:** The reportable main-analysis figures are the final ward-scoped figures. Intermediate broader-buffer figures printed by the script are not the headline results.
-- **Priority score:** The priority score is a ranking aid for ordering wards, not an absolute measure of need.
 - **South of Navalur:** This is analysed separately because it falls outside the GCC ward framework used for the main analysis. The same ward-level population/slum methodology therefore cannot currently be applied there in the same way.
 
 ## Data sources
